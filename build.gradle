@@ -1,0 +1,47 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.5'
+	id 'io.spring.dependency-management' version '1.1.3'
+}
+// 일단 gradle로 버전 설정하고 라이브러리 가져온다 정도로만 이해하기
+
+group = 'dhgudtmxhs'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral() // mavenCenrtal 사이트 에서 밑의 라이브러리를 다운받겠다.
+}
+
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' // 템플릿 엔진
+	implementation 'org.springframework.boot:spring-boot-starter-web' // 웹 프로젝트 선택
+	testImplementation 'org.springframework.boot:spring-boot-starter-test' // 테스트 라이브러리
+}
+
+// 프로젝트 안 External Libraries에 들어가면 다른 라이브러리 알아서 추가되어있음
+// -> gradle, maven 같은 빌드 툴들은 의존관계를 다 관리를 해준다.
+// ex) spring-boot-starter-web 라이브러리를 가져오면 tomcat(임베디드 내장) 등의 라이브러리를 알아서 가져온다.
+
+// ** 핵심 **
+// spring-boot-starter-web 안에는 spring-boot-starter-tomcat, spring-webmvc 가 들어있음
+// spring-boot-starter, spring-boot-starter-thymeleaf 안에는 spring-boot, spring-corer,logging이 들어있음
+
+// logging 안의 logback,slf4j
+// slf4j -> 인터페이스
+// 실제 로그를 어떤 구현체로 출력할거냐? -> logback 사용
+// springboot-start 안에 자동 의존관계로 들어옴 -> slf4j + logback이 표준.
+
+// 자바 테스트라이브러리 -> JUnit 5버전 주로 사용,
+// ** JUnit5 ** : 테스트 프레임워크
+// mockito : 목 라이브러리,
+// assertj : 테스트 코드 더 편하게 작성하게 도와주는 라이브러리
+// spring-test : 스프링 통합 테스트 지원하는 라이브러리
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
