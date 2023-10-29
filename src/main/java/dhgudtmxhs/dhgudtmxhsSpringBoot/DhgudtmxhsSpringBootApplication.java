@@ -18,5 +18,4 @@ public class DhgudtmxhsSpringBootApplication {
 	// settings 에서 gradle 검색 -> build and run을 intellij로 바꿔주면 gradle을 통해 실행하는 것 보다
 	// gradle을 통하지 않고 intellij 에서 자바를 바로 띄워서 돌려서 더 빠르다.
 
-	//
 }

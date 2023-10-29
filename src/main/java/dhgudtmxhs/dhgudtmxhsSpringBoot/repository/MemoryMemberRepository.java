@@ -1,6 +1,7 @@
 package dhgudtmxhs.dhgudtmxhsSpringBoot.repository;
 
 import dhgudtmxhs.dhgudtmxhsSpringBoot.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
@@ -50,7 +51,12 @@ public class MemoryMemberRepository implements MemberRepository{
 
     @Override
     public List<Member> findAll() {
+
         return new ArrayList<>(store.values()); //store.values() == 멤버들
+
+        // store의 모든 값(회원 객체)를 컬렉션으로 반환함
+        // store.values()가 컬렉션 형태로 반환해서 ArrayList로 반환
+        // {1=Apple, 2=Banana, 3=Cherry} -> [Apple, Banana, Cherry]
     }
 
     public void clearStore(){
