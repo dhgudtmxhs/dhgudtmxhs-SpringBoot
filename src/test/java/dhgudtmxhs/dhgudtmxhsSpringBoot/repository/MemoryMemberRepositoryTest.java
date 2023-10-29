@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.*;
 class MemoryMemberRepositoryTest {
 
     MemoryMemberRepository repository = new MemoryMemberRepository();
-
+    //d
     @AfterEach // 메소드가 실행이 끝날 때 마다 동작하는 어노테이션
     public void afterEach(){
         repository.clearStore();
