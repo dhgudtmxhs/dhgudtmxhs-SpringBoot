@@ -3,12 +3,14 @@ package dhgudtmxhs.dhgudtmxhsSpringBoot.repository;
 import dhgudtmxhs.dhgudtmxhsSpringBoot.domain.Member;
 import org.springframework.stereotype.Repository;
 
+import javax.sql.DataSource;
 import java.util.*;
 
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L; // 시퀀스
+
 
     @Override
     public Member Save(Member member) {

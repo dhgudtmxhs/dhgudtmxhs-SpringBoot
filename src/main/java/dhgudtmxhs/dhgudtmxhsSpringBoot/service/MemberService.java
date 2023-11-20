@@ -4,10 +4,12 @@ import dhgudtmxhs.dhgudtmxhsSpringBoot.domain.Member;
 import dhgudtmxhs.dhgudtmxhsSpringBoot.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Transactional // JPA 데이터 변경 전부 다 트랜젝션에서 수행되어야 한다.
 public class MemberService {
 
     //private final MemberRepository memberRepository = new MemoryMemberRepository(); // 다형성

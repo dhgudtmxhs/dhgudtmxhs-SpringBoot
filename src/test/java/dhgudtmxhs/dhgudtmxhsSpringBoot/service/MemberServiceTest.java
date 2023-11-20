@@ -64,14 +64,12 @@ class MemberServiceTest {
         // 특정 메소드 호출 시 예외가 발생하는지를 확인
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
 
-
         /* try{
             memberService.join(member2);
 
         }catch(IllegalStateException e){ // 예외 throw 받음.
             assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다."); // 메세지가 잘 받아지는지 확인용
         }*/
-
 
         // when
 
