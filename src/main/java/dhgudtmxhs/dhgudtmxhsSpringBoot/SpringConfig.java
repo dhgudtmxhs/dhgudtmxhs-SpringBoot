@@ -1,5 +1,6 @@
 package dhgudtmxhs.dhgudtmxhsSpringBoot;
 
+import dhgudtmxhs.dhgudtmxhsSpringBoot.aop.TimeTraceAop;
 import dhgudtmxhs.dhgudtmxhsSpringBoot.domain.Member;
 import dhgudtmxhs.dhgudtmxhsSpringBoot.repository.*;
 import dhgudtmxhs.dhgudtmxhsSpringBoot.service.MemberService;
@@ -23,6 +24,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 // @Autowired 하면 spring에서 bean으로 등록한 객체에 대해서만 동작함.
 @Configuration
 public class SpringConfig {
+
     private final MemberRepository memberRepository;
 
     public SpringConfig(MemberRepository memberRepository) {
@@ -33,6 +35,11 @@ public class SpringConfig {
     public MemberService memberService() {
         return new MemberService(memberRepository);
     }
+
+/*    @Bean
+    public TimeTraceAop timeTraceAop(){
+        return new TimeTraceAop(); 컴포넌트스캔 썼음
+    }*/
 
 /*    @Bean
     public MemberRepository memberRepository(){
