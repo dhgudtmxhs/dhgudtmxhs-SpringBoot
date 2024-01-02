@@ -41,7 +41,7 @@ public class MemberService {
         // orElseGet도있음
 
         validateDuplicateMember(member); // extract method
-        memberRepository.Save(member); // 예외가 던져지면 실행하지 않음. 예외처리 블록으로 가게 됨
+        memberRepository.save(member); // 예외가 던져지면 실행하지 않음. 예외처리 블록으로 가게 됨
         return member.getId();
 
     }

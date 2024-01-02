@@ -15,7 +15,7 @@ public class JdbcMemberRepository implements MemberRepository {
         // dataSource.getConnection();
     }
     @Override
-    public Member Save(Member member) {
+    public Member save(Member member) {
 
         String sql = "insert into member(name) values(?)";
 

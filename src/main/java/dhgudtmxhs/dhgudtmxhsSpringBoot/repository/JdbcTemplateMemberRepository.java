@@ -28,7 +28,7 @@ public class JdbcTemplateMemberRepository implements MemberRepository {
     // 선언과 동시에 초기화 하거나 생성자에서 인스턴스 변수 초기화 한다.
 
     @Override
-    public Member Save(Member member) {
+    public Member save(Member member) {
         SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(JdbcTemplate);
         jdbcInsert.withTableName("member").usingGeneratedKeyColumns("id");
 

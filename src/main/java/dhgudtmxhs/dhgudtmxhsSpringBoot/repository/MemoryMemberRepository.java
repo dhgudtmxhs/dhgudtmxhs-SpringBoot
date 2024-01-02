@@ -13,7 +13,7 @@ public class MemoryMemberRepository implements MemberRepository{
 
 
     @Override
-    public Member Save(Member member) {
+    public Member save(Member member) {
         member.setId(++sequence); // 아이디 세팅 (시퀀스) 0, 1, 2, 3, 4, 5 ...
         store.put(member.getId(), member); // map에 저장 ( key(id) : 시퀀스 , 값 : member 객체( 고유의 name을 가질 것 같음 )
         return member; // 반환    // {1=???, 2=??? 3=??? } Test class에서 name을 삽입한다.

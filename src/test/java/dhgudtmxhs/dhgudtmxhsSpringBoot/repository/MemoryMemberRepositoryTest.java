@@ -29,7 +29,7 @@ class MemoryMemberRepositoryTest {
         Member member = new Member();
         member.setName("spring");
 
-        repository.Save(member); // id저장하는 메소드 -> name을 넘겨서 id, name을 k:v 형식으로 저장할 수 있게 된다.
+        repository.save(member); // id저장하는 메소드 -> name을 넘겨서 id, name을 k:v 형식으로 저장할 수 있게 된다.
 
         Member result = repository.findById(member.getId()).get();
         // repository로 갔다 온 id를 넣고 메소드 매개변수로 보내서 찾는다.
@@ -46,11 +46,11 @@ class MemoryMemberRepositoryTest {
     public void findByName(){
         Member member1 = new Member();
         member1.setName("spring1");
-        repository.Save(member1); // id, name 저장
+        repository.save(member1); // id, name 저장
 
         Member member2 = new Member();
         member2.setName("spring2");
-        repository.Save(member2);
+        repository.save(member2);
 
         Member result = repository.findByName("spring1").get(); // name으로 찾음. get()은 optional을 벗긴다고 생각
 
@@ -62,11 +62,11 @@ class MemoryMemberRepositoryTest {
     public void findAll(){
         Member member1 = new Member();
         member1.setName("spring1");
-        repository.Save(member1);
+        repository.save(member1);
 
         Member member2 = new Member();
         member2.setName("spring2");
-        repository.Save(member2);
+        repository.save(member2);
 
         List<Member> result = repository.findAll();
 
