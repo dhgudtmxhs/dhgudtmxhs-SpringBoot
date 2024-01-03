@@ -19,7 +19,7 @@ public class TimeTraceAop {
         System.out.println("START :" + joinPoint.toString());
         try{
             Object result = joinPoint.proceed(); // 다음메소드로 진행
-            return joinPoint.proceed();
+            return joinPoint.proceed(); // 통해 가짜 클래스에서 실제 클래스로 연결된다고 함.
 
         }finally{
             long finish = System.currentTimeMillis();
