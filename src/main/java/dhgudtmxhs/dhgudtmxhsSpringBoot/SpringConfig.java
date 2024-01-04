@@ -49,6 +49,13 @@ public class SpringConfig {
         // 다형성 활용 (인터페이스를 두고 구현체를 바꿈) MEMORY -> JDBC로 바꿈
         // SOLID 개방-폐쇄 원칙 - OCP 확장에는 열려있고 수정 변경 에는 닫혀있다.
 
+        // solid 5원칙
+        // SRP : 단일 책임 원칙
+        // OCP : 개방 - 폐쇄 원칙
+        // LSP : 리스코프 치환 원칙
+        // ISP : 인터페이스 분리 원칙
+        // DIP : 의존관계 역전 원칙
+
         // Spring의 DI를 사용하면, 기존 코드를 전혀 손대지 않고 설정만으로 구현 클래스를 변경할 수 있다.
 
         //return new JpaMemberRepository(em);
