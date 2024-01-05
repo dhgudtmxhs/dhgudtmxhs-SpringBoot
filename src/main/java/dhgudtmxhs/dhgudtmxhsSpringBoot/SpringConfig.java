@@ -56,6 +56,8 @@ public class SpringConfig {
         // ISP : 인터페이스 분리 원칙
         // DIP : 의존관계 역전 원칙
 
+
+        // 다형성만으로는 OCP와 DIP 원칙을 지킬 수 없다.
         // Spring의 DI를 사용하면, 기존 코드를 전혀 손대지 않고 설정만으로 구현 클래스를 변경할 수 있다.
 
         //return new JpaMemberRepository(em);
